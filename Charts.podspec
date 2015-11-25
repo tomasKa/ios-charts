@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   s.name = "Charts"
   s.version = "2.1.6"
   s.summary = "ios-charts is a powerful & easy to use chart library for iOS"
-  s.homepage = "https://github.com/danielgindi/ios-charts"
+  s.homepage = "https://github.com/tomasKa/ios-charts.git"
   s.license = { :type => "Apache License, Version 2.0", :file => "LICENSE" }
   s.authors = "Daniel Cohen Gindi", "Philipp Jahoda"
   s.ios.deployment_target = "8.0"
