@@ -3,13 +3,15 @@
 //  Charts
 //
 //  Created by Daniel Cohen Gindi on 4/3/15.
-//
+//  Modified by Tomas Kamarauskas on 25/11/15.
 //  Copyright 2015 Daniel Cohen Gindi & Philipp Jahoda
 //  A port of MPAndroidChart for iOS
 //  Licensed under Apache License 2.0
 //
 //  https://github.com/danielgindi/ios-charts
 //
+
+//This modification places line chart lables in the middle of the bubble. Please note this modification is intended for a specific projects with it's design therefore it may not work as expected in situations where line design is different
 
 import Foundation
 import CoreGraphics
@@ -409,7 +411,7 @@ public class LineChartRenderer: LineScatterCandleRadarChartRenderer
                 let trans = dataProvider.getTransformer(dataSet.axisDependency)
                 
                 // make sure the values do not interfear with the circles
-                var valOffset = Int(dataSet.circleRadius * 1.75)
+                var valOffset = 0//Int(dataSet.circleRadius * 1.75)
                 
                 if (!dataSet.isDrawCirclesEnabled)
                 {
@@ -446,7 +448,7 @@ public class LineChartRenderer: LineScatterCandleRadarChartRenderer
                     
                     let val = entries[j + minx].value
                     
-                    ChartUtils.drawText(context: context, text: formatter!.stringFromNumber(val)!, point: CGPoint(x: positions[j].x, y: positions[j].y - CGFloat(valOffset) - valueFont.lineHeight), align: .Center, attributes: [NSFontAttributeName: valueFont, NSForegroundColorAttributeName: valueTextColor])
+                    ChartUtils.drawText(context: context, text: formatter!.stringFromNumber(val)!, point: CGPoint(x: positions[j].x, y: positions[j].y - valueFont.lineHeight + 7.5), align: .Center, attributes: [NSFontAttributeName: valueFont, NSForegroundColorAttributeName: valueTextColor])
                 }
             }
         }
